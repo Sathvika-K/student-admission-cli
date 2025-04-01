@@ -1,0 +1,25 @@
+plugins {
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+tasks.withType(JavaExec).configureEach {
+    standardInput = System.in
+}
+
+dependencies {
+    // Add dependencies here if needed
+}
+
+application {
+    mainClass = 'com.devops.StudentAdmissionCLI'
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))
+    }
+}
